@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Point - Customer Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>FLEX POINT</h1>
+        <p>Digital Printing Unit</p>
+        <h2>Customer Management System</h2>
+    </header>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#addCustomer">Add Customer</a>
+        <a href="#customerList">Customer Records</a>
+    </nav>
+
+    <main>
+        <!-- Dashboard -->
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+
+            <div class="dashboard">
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <p id="totalCustomers">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p id="totalOrders">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pending Orders</h3>
+                    <p id="pendingOrders">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Completed Orders</h3>
+                    <p id="completedOrders">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Customer Form -->
+        <section id="addCustomer">
+            <h2>Add Customer</h2>
+
+            <form id="customerForm">
+
+                <input type="hidden" id="editId">
+
+                <label>Customer Name</label>
+                <input type="text" id="name"
+                       placeholder="Enter customer name" required>
+
+                <label>Phone Number</label>
+                <input type="tel" id="phone"
+                       placeholder="Enter phone number" required>
+
+                <label>Email</label>
+                <input type="email" id="email"
+                       placeholder="Enter email address">
+
+                <label>Printing Service</label>
+                <select id="service" required>
+                    <option value="">Select Service</option>
+                    <option>Business Cards</option>
+                    <option>Banner Printing</option>
+                    <option>Brochure Printing</option>
+                    <option>Invitation Printing</option>
+                    <option>Photo Printing</option>
+                    <option>Document Printing</option>
+                    <option>Other</option>
+                </select>
+
+                <label>Order Description</label>
+                <textarea id="description"
+                          placeholder="Enter order details"></textarea>
+
+                <label>Order Date</label>
+                <input type="date" id="orderDate" required>
+
+                <label>Order Status</label>
+                <select id="status">
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+                </select>
+
+                <button type="submit" id="saveButton">
+                    Add Customer
+                </button>
+
+                <button type="reset" class="clear">
+                    Clear
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Customer Records -->
+        <section id="customerList">
+            <h2>Customer Records</h2>
+
+            <input type="text" id="search"
+                   placeholder="Search customer by name or phone">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customerTable">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Flex Point Digital Printing Unit</p>
+        <p>Customer Management System - Internship Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
